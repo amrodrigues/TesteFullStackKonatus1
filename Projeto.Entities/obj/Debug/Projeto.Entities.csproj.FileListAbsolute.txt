@@ -1,0 +1,5 @@
+C:\Users\amrod\source\repos\TesteFullStackKonatus\Projeto.Entities\obj\Debug\Projeto.Entities.csproj.CoreCompileInputs.cache
+C:\Users\amrod\source\repos\TesteFullStackKonatus\Projeto.Entities\bin\Debug\Projeto.Entities.dll
+C:\Users\amrod\source\repos\TesteFullStackKonatus\Projeto.Entities\bin\Debug\Projeto.Entities.pdb
+C:\Users\amrod\source\repos\TesteFullStackKonatus\Projeto.Entities\obj\Debug\Projeto.Entities.dll
+C:\Users\amrod\source\repos\TesteFullStackKonatus\Projeto.Entities\obj\Debug\Projeto.Entities.pdb

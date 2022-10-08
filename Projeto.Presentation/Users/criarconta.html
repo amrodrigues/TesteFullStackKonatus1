@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html ng-app="appUsuario">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+
+    <script src="../Scripts/jquery-3.0.0.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+
+    <script src="../Scripts/angular.min.js"></script>
+
+    <script>
+        var app= angular.module('appUsuario', []);
+
+        app.controller('criarconta-controller',
+            function ($scope, $http) {
+                $scope.cadastrar = function () {
+                    $scope.mensagem = "Processando, aguarde.";
+
+                    $http.post("https://localhost:44361/api/Users/cadastrar", $scope.usuario)
+                        .then(function (d) { //sucesso..
+                            $scope.mensagem = d.data.mensagem;
+                            $scope.usuario = {};
+                        })
+                        .catch(function (e) {
+                            $scope.mensagem = e.data;
+                        });
+                };
+            });
+
+    </script>
+
+</head>
+<body class="container" ng-controller="criarconta-controller">
+    <h2>Criar conta do usuário</h2>
+     <a href="/index.html">Página inicial</a>
+    <hr />
+    <div class="row">
+        <div class="col-md-3">
+            <label>Login:</label>
+            <input type="text" class="form-control" placeholder="Digite aqui" ng-model="usuario.login" />
+            <br />
+            <label>Senha:</label>
+            <input type="password" class="form-control" placeholder="Digite aqui" ng-model="usuario.password" />
+            <br />
+            <button class="btn btn-success" ng-click="cadastrar()">Criar conta do Usuário</button>
+            <br />
+            <br />
+            <strong>{{mensagem}}</strong>
+        </div>
+    </div>
+</body>
+</html>

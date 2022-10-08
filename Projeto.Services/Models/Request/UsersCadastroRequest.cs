@@ -8,8 +8,8 @@ namespace Projeto.Services.Models.Request
 {
     public class UsersCadastroRequest
     {
-       [Required(ErrorMessage ="Por favor, informe o id do usuário.")]
-        public int Id { get; set; }
+    //   [Required(ErrorMessage ="Por favor, informe o id do usuário.")]
+     //   public int Id { get; set; }
        
         [Required(ErrorMessage = "Por favor, informe o login do usuário.")]
         public string Login { get; set; }

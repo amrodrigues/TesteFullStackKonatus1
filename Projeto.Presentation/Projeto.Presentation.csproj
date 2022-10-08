@@ -69,11 +69,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="index.html" />
     <Content Include="Maintenance\cadastro.html" />
     <Content Include="Maintenance\consulta.html" />
     <Content Include="Stage\Cadastro.html" />
     <Content Include="Stage\consulta.html" />
-    <Content Include="index.html" />
+    <Content Include="menu.html" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
@@ -129,6 +130,8 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Users\autenticar.html" />
+    <Content Include="Users\criarconta.html" />
     <Content Include="Web.config" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />

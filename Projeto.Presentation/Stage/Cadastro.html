@@ -18,12 +18,12 @@
         //declarando o controller..
         app.controller('cadastroController',
             function ($scope, $http) {
-
+              
                 //função para consultar os manutencao..
-                $scope.consultarContato = function () {
+                $scope.consultarManutencao = function () {
                     $http.get("https://localhost:44361/api/Maintenance/consultar")
                         .then(function (obj) {
-                            $scope.contato = obj.data;
+                            $scope.manutencao = obj.data;
 
                         })
                         .catch(function (e) {
@@ -74,11 +74,12 @@
             <label>Tipo de Manutenção:</label>
             <select class="form-control" ng-model="model.MaintenanceId"
                     ng-init="consultarManutencao()">
-                <option ng-repeat="m in Manutencao | orderBy : Nome" value="{{m.Id}}"
+                <option ng-repeat="m in manutencao | orderBy : Nome" value="{{m.Id}}"
                         ng-selected="m.Id == model.MaintenanceId">
                     {{m.Description}}
                 </option>
             </select>
+            <br />
 
             <label>Descrição da Etapa:</label>
             <input type="text" class="form-control"

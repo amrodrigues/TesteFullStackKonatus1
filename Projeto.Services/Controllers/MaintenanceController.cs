@@ -50,7 +50,8 @@ namespace Projeto.Services.Controllers
         }
 
 
-        [Route("excluir")]
+
+            [Route("excluir")]
         [HttpPost]
         public HttpResponseMessage Excluir(MaintenanceExcluirRequest request)
         {
@@ -107,6 +108,35 @@ namespace Projeto.Services.Controllers
 
                 }
                 return Request.CreateResponse(HttpStatusCode.OK, lista);
+            }
+            catch (Exception e)
+            {
+                response.Mensagem = e.Message;
+                return Request.CreateResponse(HttpStatusCode.BadRequest, response);
+            }
+
+            //return Request.CreateResponse(HttpStatusCode.BadRequest, lista);
+
+        }
+
+
+        [Route("consultarporid")]
+        [HttpGet]
+        public HttpResponseMessage ConsultarPorId(int id)
+        {      //declarando uma lista..
+            var response = new  MensagemResponse();
+            try
+            {
+                Maintenance m = business.ConsultarPorId(id);
+                MaintenanceConsultaRequest model = new MaintenanceConsultaRequest();
+                model.Id = m.Id;
+                model.Status = m.Status;
+                model.CreatedAt = m.CreatedAt;
+                model.Description = m.Description;
+                model.UserId = m.UserId;
+
+       
+                return Request.CreateResponse(HttpStatusCode.OK, model);
             }
             catch (Exception e)
             {
